@@ -1,0 +1,37 @@
+{
+  "name": "curtain.js",
+  "version": "2.0.1",
+  "description": "This plugin allows you to create a web page with multiple fixed panels that unroll with an amusing effect.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jasmine": "~0.5.1"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/citrusmist/curtain.js.git"
+  },
+  "keywords": [
+    "layout",
+    "parallax",
+    "jQuery",
+    "curtain"
+  ],
+  "author": "Milos Soskic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/citrusmist/curtain.js/issues"
+  }
+}
