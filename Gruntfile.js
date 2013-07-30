@@ -61,7 +61,7 @@ module.exports = function(grunt) {
       src: 'src/**/*.js',
       options: {
         specs: 'spec/**/*.js',
-        vendor: 'jQuery'
+        vendor: ['bower_components/jquery/jquery.min.js', 'bower_components/imagesloaded/imagesloaded.min.js']
       }
     },
     watch: {
