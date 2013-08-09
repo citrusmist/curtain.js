@@ -44,8 +44,20 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        "predef": ["jQuery", "$"],
-        globals: {}
+        "predef": ["jQuery", "$", "console", "grunt"],
+        "globals" : {
+          "it"           : false,
+          "xit"          : false,
+          "describe"     : false,
+          "xdescribe"    : false,
+          "beforeEach"   : false,
+          "afterEach"    : false,
+          "expect"       : false,
+          "spyOn"        : false,
+          "loadFixtures" : false,
+          "loadStyleFixtures" : false,
+          'jasmine': false
+        }
       },
       gruntfile: {
         src: 'Gruntfile.js'
@@ -60,8 +72,14 @@ module.exports = function(grunt) {
     jasmine:{
       src: 'src/**/*.js',
       options: {
-        specs: 'spec/**/*.js',
-        vendor: ['bower_components/jquery/jquery.min.js', 'bower_components/imagesloaded/imagesloaded.min.js']
+        specs: 'test/spec/**/*.js',
+        vendor: [
+          'bower_components/jquery/jquery.min.js', 
+          'bower_components/imagesloaded/imagesloaded.min.js'
+        ],
+        helpers: [
+          'bower_components/jasmine-jquery/lib/jasmine-jquery.js', 
+        ]
       }
     },
     watch: {
