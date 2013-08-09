@@ -74,11 +74,14 @@ module.exports = function(grunt) {
       options: {
         specs: 'test/spec/**/*.js',
         vendor: [
-          'bower_components/jquery/jquery.min.js', 
+          'bower_components/jquery/jquery.min.js',
           'bower_components/imagesloaded/imagesloaded.min.js'
         ],
         helpers: [
-          'bower_components/jasmine-jquery/lib/jasmine-jquery.js', 
+          'bower_components/jasmine-jquery/lib/jasmine-jquery.js'
+        ],
+        styles: [
+          'test/fixtures/normalise.css'
         ]
       }
     },
