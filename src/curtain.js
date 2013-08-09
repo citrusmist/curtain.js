@@ -67,9 +67,16 @@
                 this.$element.find('.fixed').css({position:'absolute'});
             }
 
+            var htmlIsScrollEl = false;
+
+            if (navigator.userAgent.match(/mozilla/i) ||
+                navigator.userAgent.match(/msie/i) ){
+                htmlIsScrollEl = true;
+            }
+
             if(this.options.mobile){
                this.scrollEl =  this.$element;
-            } else if($.browser.mozilla || $.browser.msie) {
+            } else if( htmlIsScrollEl ) {
                 this.scrollEl = $('html');
             } else {
                 this.scrollEl = $('body');
