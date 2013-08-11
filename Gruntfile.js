@@ -59,7 +59,6 @@ module.exports = function(grunt) {
           'jasmine': false,
           'page' : false,
           'aboveCurtainHeight': false,
-          'ImagesLoaded': false
         }
       },
       gruntfile: {

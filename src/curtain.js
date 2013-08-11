@@ -45,6 +45,7 @@
         init: function () {
             var self = this;
             var htmlIsScrollEl = false;
+            var imgLoader = $(this.element).imagesLoaded || self.imageLoaded;
 
             // Cache element
             this.$element = $(this.element);
@@ -116,10 +117,7 @@
             };
 
             if(self.$element.find('img').length) {
-                self.imageLoaded(callbackImageLoaded);
-                // self.$element.imagesLoaded().always(callbackImageLoaded);
-                $('body').imagesLoaded();
-
+                imgLoader(callbackImageLoaded);
             } else {
                 callbackImageLoaded();
             }

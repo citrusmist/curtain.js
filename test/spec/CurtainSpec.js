@@ -22,13 +22,13 @@ describe('Plain Curtain DOM Initialisation', function() {
 	/**
 	 * For some reason this test fails for 3 of the list items
 	 */
-	it("makes the curtains as wide as the viewport", function() {
-		//var $curtains = $('.curtains > li');
-		//for (var i = $curtains.length - 1; i >= 0; i--) {
-		//expect( $curtains.eq(i)).toBe('smelly');
-		//expect($curtains.eq(i).width( ))
-		//.toEqual($(window).width());
-		// }
+	xit("makes the curtains as wide as the viewport", function() {
+		var $curtains = $('.curtains > li');
+		for (var i = $curtains.length - 1; i >= 0; i--) {
+		expect( $curtains.eq(i)).toBe('smelly');
+		expect($curtains.eq(i).width( ))
+		.toEqual($(window).width());
+		}
 	});
 
 	it('makes the curtains as high as the viewport or higher', function() {
@@ -120,24 +120,22 @@ describe('Curtain DOM Initialisation with images', function() {
 		loadFixtures('curtains_img.html');
 		loadStyleFixtures('curtain.css');
 
-
 		$.fn.imagesLoaded = function( options, callback ){
-			return 'blah';
+
 		};
 
-		$.fn.cock = function (){
-			return 'blah';
-		};
+		spyOn($.fn, 'imagesLoaded').andCallFake(function(){
+			return {
+				always: function(func) {
 
-		spyOn($.fn, 'imagesLoaded');
-		spyOn($.fn, 'cock');
-
+				}
+			};
+		});
 
 		$curtains = $('.curtains > li');
 		$plugin = $('.curtains').curtain();
-		// $('body').imagesLoaded();
 	});
-	
+
 	it('uses imagesLoaded plugin if its present', function() {
 		expect($.fn.imagesLoaded).toHaveBeenCalled();
 	});
