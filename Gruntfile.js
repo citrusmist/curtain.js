@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        "predef": ["jQuery", "$", "console", "grunt"],
+        "predef": ["jQuery", "$", "console", "grunt" ],
         "globals" : {
           "it"           : false,
           "xit"          : false,
@@ -56,7 +56,10 @@ module.exports = function(grunt) {
           "spyOn"        : false,
           "loadFixtures" : false,
           "loadStyleFixtures" : false,
-          'jasmine': false
+          'jasmine': false,
+          'page' : false,
+          'aboveCurtainHeight': false,
+          'ImagesLoaded': false
         }
       },
       gruntfile: {
@@ -75,14 +78,17 @@ module.exports = function(grunt) {
         specs: 'test/spec/**/*.js',
         vendor: [
           'bower_components/jquery/jquery.min.js',
-          'bower_components/imagesloaded/imagesloaded.min.js'
+          'bower_components/eventEmitter/EventEmitter.min.js',
+          'bower_components/eventie/eventie.js',
+          'bower_components/imagesloaded/imagesloaded.js'
         ],
         helpers: [
           'bower_components/jasmine-jquery/lib/jasmine-jquery.js'
         ],
         styles: [
           'test/fixtures/normalise.css'
-        ]
+        ],
+        keepRunner: true
       }
     },
     watch: {

@@ -1,5 +1,5 @@
 {
-  "name": "curtain.js",
+  "name": "curtain",
   "version": "2.0.1",
   "description": "This plugin allows you to create a web page with multiple fixed panels that unroll with an amusing effect.",
   "main": "Gruntfile.js",
